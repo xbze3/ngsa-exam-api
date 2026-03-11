@@ -10,6 +10,7 @@ The project is built with:
 - Docker & Docker Compose
 
 The database includes open-source NGSA-style exam questions and answers.
+<<<<<<< HEAD
 
 ---
 
@@ -25,6 +26,9 @@ This live deployment allows developers, applications, and dashboards to access N
 
 ---
 
+=======
+---
+>>>>>>> 15663d1f2f72718fac18138b772a098830fcecf1
 ## Features
 
 - Retrieve available exams
@@ -33,6 +37,7 @@ This live deployment allows developers, applications, and dashboards to access N
 - Submit answers and receive grading results
 - Fully containerized with Docker
 - Seeded database with exam data
+<<<<<<< HEAD
 
 ---
 
@@ -40,6 +45,13 @@ This live deployment allows developers, applications, and dashboards to access N
 
 ```
 ngsa-exam-api
+=======
+---
+## Project Structure
+
+```
+ngsa-api
+>>>>>>> 15663d1f2f72718fac18138b772a098830fcecf1
 ├── src
 │   ├── config
 │   │   └── db.js
@@ -62,9 +74,13 @@ ngsa-exam-api
 ├── package.json
 └── README.md
 ```
+<<<<<<< HEAD
 
 ---
 
+=======
+---
+>>>>>>> 15663d1f2f72718fac18138b772a098830fcecf1
 ## Running the Project
 
 ### Using Docker (Recommended)
@@ -85,9 +101,13 @@ To reset the database and re-import the seed data:
 docker compose down -v
 docker compose up --build
 ```
+<<<<<<< HEAD
 
 ---
 
+=======
+---
+>>>>>>> 15663d1f2f72718fac18138b772a098830fcecf1
 ## API Endpoints
 
 Base route: `/ngsa`
@@ -183,7 +203,6 @@ Base route: `/ngsa`
     ]
 }
 ```
-
 ## Database
 
 The MongoDB database used by the project is: `ngsa-db`
@@ -221,9 +240,13 @@ MONGODB_URI=YOUR_MONGODB_CONNECTION_STRING
     "message": "API is up and running!"
 }
 ```
+<<<<<<< HEAD
 
 ---
 
+=======
+---
+>>>>>>> 15663d1f2f72718fac18138b772a098830fcecf1
 ## License
 
 This project is licensed under the **MIT License**

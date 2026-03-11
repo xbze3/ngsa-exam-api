@@ -11,6 +11,21 @@ The project is built with:
 
 The database includes open-source NGSA-style exam questions and answers.
 
+---
+
+## Live Service
+
+The API is publicly deployed and accessible at:
+
+**Base URL:** [ https://ngsa-exam-api.onrender.com/ ]
+
+**Further API Documentation:** [ Coming Soon ]
+
+This live deployment allows developers, applications, and dashboards to
+access NGSA exam questions and grading services programmatically without needing to install the API locally.
+
+---
+
 ## Features
 
 - Retrieve available exams
@@ -20,10 +35,12 @@ The database includes open-source NGSA-style exam questions and answers.
 - Fully containerized with Docker
 - Seeded database with exam data
 
+---
+
 ## Project Structure
 
 ```
-.
+ngsa-exam-api
 ├── src
 │   ├── config
 │   │   └── db.js
@@ -47,6 +64,8 @@ The database includes open-source NGSA-style exam questions and answers.
 └── README.md
 ```
 
+---
+
 ## Running the Project
 
 ### Using Docker (Recommended)
@@ -69,6 +88,8 @@ To reset the database and re-import the seed data:
 docker compose down -v
 docker compose up --build
 ```
+
+---
 
 ## API Endpoints
 
@@ -203,6 +224,8 @@ Response:
     "message": "API is up and running!"
 }
 ```
+
+---
 
 ## License
 

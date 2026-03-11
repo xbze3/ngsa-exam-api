@@ -21,8 +21,7 @@ The API is publicly deployed and accessible at:
 
 **Further API Documentation:** [ Coming Soon ]
 
-This live deployment allows developers, applications, and dashboards to
-access NGSA exam questions and grading services programmatically without needing to install the API locally.
+This live deployment allows developers, applications, and dashboards to access NGSA exam questions and grading services programmatically without needing to install the API locally.
 
 ---
 
@@ -78,8 +77,6 @@ docker compose up --build
 
 The API will be available at: `http://localhost:8080`
 
-MongoDB will run on: `mongodb://localhost:27017/ngsa-db`
-
 ## Reset the Database
 
 To reset the database and re-import the seed data:
@@ -105,7 +102,7 @@ Base route: `/ngsa`
 
 ### Get All Exams
 
-Example response:
+**Example response:**
 
 ```json
 [
@@ -120,9 +117,9 @@ Example response:
 
 ### Get Questions for an Exam
 
-Example: `GET /ngsa/exam/questions/66d0d0000000000000000000`
+**Example:** `GET /ngsa/exam/questions/66d0d0000000000000000000`
 
-Example response:
+**Example response:**
 
 ```json
 {
@@ -144,9 +141,9 @@ Example response:
 
 ### Grade an Exam
 
-Example: `POST /ngsa/exam/66d0d0000000000000000000/grade`
+**Example:** `POST /ngsa/exam/66d0d0000000000000000000/grade`
 
-Request Body:
+**Request Body:**
 
 ```json
 {
@@ -163,7 +160,7 @@ Request Body:
 }
 ```
 
-Response Example:
+**Response Example:**
 
 ```json
 {
@@ -191,7 +188,7 @@ Response Example:
 
 The MongoDB database used by the project is: `ngsa-db`
 
-Collections:
+**Collections:**
 
 - exams
 - questions
@@ -216,7 +213,7 @@ MONGODB_URI=YOUR_MONGODB_CONNECTION_STRING
 
 **GET** `/healthcheck`
 
-Response:
+**Response:**
 
 ```json
 {

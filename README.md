@@ -23,7 +23,7 @@ The database includes open-source NGSA-style exam questions and answers.
 ## Project Structure
 
 ```
-.
+ngsa-api
 ├── src
 │   ├── config
 │   │   └── db.js

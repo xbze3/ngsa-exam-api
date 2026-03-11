@@ -10,7 +10,7 @@ The project is built with:
 - Docker & Docker Compose
 
 The database includes open-source NGSA-style exam questions and answers.
-
+---
 ## Features
 
 - Retrieve available exams
@@ -19,7 +19,7 @@ The database includes open-source NGSA-style exam questions and answers.
 - Submit answers and receive grading results
 - Fully containerized with Docker
 - Seeded database with exam data
-
+---
 ## Project Structure
 
 ```
@@ -46,7 +46,7 @@ ngsa-api
 ├── package.json
 └── README.md
 ```
-
+---
 ## Running the Project
 
 ### Using Docker (Recommended)
@@ -69,7 +69,7 @@ To reset the database and re-import the seed data:
 docker compose down -v
 docker compose up --build
 ```
-
+---
 ## API Endpoints
 
 Base route: `/ngsa`
@@ -165,7 +165,6 @@ Response Example:
     ]
 }
 ```
-
 ## Database
 
 The MongoDB database used by the project is: `ngsa-db`
@@ -203,7 +202,7 @@ Response:
     "message": "API is up and running!"
 }
 ```
-
+---
 ## License
 
 This project is licensed under the **MIT License**

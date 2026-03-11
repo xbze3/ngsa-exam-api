@@ -1,4 +1,4 @@
-const QAModel = require("../models/qaModel");
+const QAModel = require("../models/questionModel");
 
 async function getExamQuestions(req, res) {
     try {
@@ -7,6 +7,11 @@ async function getExamQuestions(req, res) {
         const examQuestions = await QAModel.find({ test_id: id }).select(
             "-correct_option -test_id",
         );
+
+        if (!examQuestions) {
+            return res.status(404).json({ message: "Exam not found" });
+        }
+
         res.json({
             questions: examQuestions,
         });

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const qaModel = new mongoose.Schema(
+const questionModel = new mongoose.Schema(
     {
         test_id: {
             type: Schema.Types.ObjectId,
@@ -54,4 +54,4 @@ const qaModel = new mongoose.Schema(
     },
 );
 
-module.exports = mongoose.model("QAModel", qaModel, "English-QA");
+module.exports = mongoose.model("questionModel", questionModel, "questions");

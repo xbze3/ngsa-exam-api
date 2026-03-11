@@ -26,7 +26,7 @@ const examModel = new Schema(
         question_ids: [
             {
                 type: Schema.Types.ObjectId,
-                ref: "QAModel",
+                ref: "questions",
                 required: true,
             },
         ],
@@ -41,4 +41,4 @@ const examModel = new Schema(
     },
 );
 
-module.exports = mongoose.model("ExamModel", examModel, "English-Tests");
+module.exports = mongoose.model("ExamModel", examModel, "exams");

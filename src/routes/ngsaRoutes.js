@@ -1,11 +1,21 @@
 const express = require("express");
-const { getEnglishExams, gradeExam } = require("../controllers/examController");
-const getExamQuestions = require("../controllers/qaController");
+const {
+    getExams,
+    gradeExam,
+    getEnglishExams,
+    getMathExams,
+} = require("../controllers/examController");
+const getExamQuestions = require("../controllers/questionController");
 
 const router = express.Router();
 
-router.get("/english", getEnglishExams);
-router.get("/english/questions/:id", getExamQuestions);
-router.post("/english/:testId/grade", gradeExam);
+router.get("/exams", getExams);
+
+router.get("/exams/english", getEnglishExams);
+router.get("/exams/math", getMathExams);
+
+router.get("/exam/questions/:id", getExamQuestions);
+
+router.post("/exam/:testId/grade", gradeExam);
 
 module.exports = router;

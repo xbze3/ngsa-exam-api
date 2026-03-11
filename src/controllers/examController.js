@@ -1,9 +1,52 @@
+const mongoose = require("mongoose");
 const ExamModel = require("../models/examModel");
-const QAModel = require("../models/qaModel");
+const QAModel = require("../models/questionModel");
+
+async function getExams(req, res) {
+    try {
+        const exams = await ExamModel.find().sort({ subject: 1, year: -1 });
+        res.json({
+            exams: exams,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: `Something went wrong: ${error.message}`,
+        });
+    }
+}
 
 async function getEnglishExams(req, res) {
     try {
-        const exams = await ExamModel.find().sort({ year: -1 });
+        const exams = await ExamModel.find({ subject: "English" }).sort({
+            year: -1,
+        });
+
+        if (!exams) {
+            return res.status(404).json({ message: "No English exams found" });
+        }
+
+        res.json({
+            exams: exams,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: `Something went wrong: ${error.message}`,
+        });
+    }
+}
+
+async function getMathExams(req, res) {
+    try {
+        const exams = await ExamModel.find({ subject: "Mathematics" }).sort({
+            year: -1,
+        });
+
+        if (!exams) {
+            return res
+                .status(404)
+                .json({ message: "No Mathemtaics exams found" });
+        }
+
         res.json({
             exams: exams,
         });
@@ -20,7 +63,7 @@ async function gradeExam(req, res) {
         const { answers } = req.body;
 
         if (!mongoose.Types.ObjectId.isValid(testId)) {
-            return res.status(400).json({ message: "Invalid test ID" });
+            return res.status(400).json({ message: "Invalid exam ID" });
         }
 
         if (!Array.isArray(answers)) {
@@ -32,7 +75,7 @@ async function gradeExam(req, res) {
         const test = await ExamModel.findById(testId).lean();
 
         if (!test) {
-            return res.status(404).json({ message: "Test not found" });
+            return res.status(404).json({ message: "Exam not found" });
         }
 
         const questions = await QAModel.find({ test_id: testId })
@@ -45,7 +88,7 @@ async function gradeExam(req, res) {
         if (!questions.length) {
             return res
                 .status(404)
-                .json({ message: "No questions found for this test" });
+                .json({ message: "No questions found for this exam" });
         }
 
         const submittedAnswersMap = new Map();
@@ -112,4 +155,4 @@ async function gradeExam(req, res) {
     }
 }
 
-module.exports = { getEnglishExams, gradeExam };
+module.exports = { getExams, getEnglishExams, getMathExams, gradeExam };

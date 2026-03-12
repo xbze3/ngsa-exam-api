@@ -41,7 +41,8 @@ This live deployment allows developers, applications, and dashboards to access N
 ngsa-api
 ├── src
 │   ├── config
-│   │   └── db.js
+│   │   ├── db.js
+│   │   └── swagger.js
 │   ├── controllers
 │   │   ├── examController.js
 │   │   └── questionController.js

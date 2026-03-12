@@ -19,8 +19,6 @@ The API is publicly deployed and accessible at:
 
 **Base URL:** [ https://ngsa-exam-api.onrender.com/ ]
 
-**Further API Documentation:** [ **Coming Soon** ]
-
 This live deployment allows developers, applications, and dashboards to access NGSA exam questions and grading services programmatically without needing to install the API locally.
 
 ---

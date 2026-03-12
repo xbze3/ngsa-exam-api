@@ -2,7 +2,7 @@ const QAModel = require("../models/questionModel");
 
 async function getExamQuestions(req, res) {
     try {
-        const { id } = req.params;
+        const { testId } = req.params;
 
         const examQuestions = await QAModel.find({ test_id: id }).select(
             "-correct_option -test_id",

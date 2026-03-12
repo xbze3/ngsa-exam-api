@@ -38,7 +38,7 @@ This live deployment allows developers, applications, and dashboards to access N
 ## Project Structure
 
 ```
-ngsa-api
+.
 ├── src
 │   ├── config
 │   │   ├── db.js

@@ -51,27 +51,6 @@ app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
  *                 documentation:
  *                   type: string
  *                   example: /docs
- *                 endpoints:
- *                   type: object
- *                   properties:
- *                     getAllExams:
- *                       type: string
- *                       example: GET /ngsa/exams
- *                     getEnglishExams:
- *                       type: string
- *                       example: GET /ngsa/exams/english
- *                     getMathExams:
- *                       type: string
- *                       example: GET /ngsa/exams/math
- *                     getExamQuestions:
- *                       type: string
- *                       example: GET /ngsa/exam/questions/:id
- *                     gradeExam:
- *                       type: string
- *                       example: POST /ngsa/exam/:testId/grade
- *                     healthCheck:
- *                       type: string
- *                       example: GET /healthcheck
  *                 message:
  *                   type: string
  *                   example: Welcome to the NGSA Exam API!
@@ -84,14 +63,6 @@ app.get("/", (req, res) => {
         baseRoute: "/ngsa",
         liveService: "https://ngsa-exam-api.onrender.com",
         documentation: "/docs",
-        endpoints: {
-            getAllExams: "GET /ngsa/exams",
-            getEnglishExams: "GET /ngsa/exams/english",
-            getMathExams: "GET /ngsa/exams/math",
-            getExamQuestions: "GET /ngsa/exam/questions/:id",
-            gradeExam: "POST /ngsa/exam/:testId/grade",
-            healthCheck: "GET /healthcheck",
-        },
         message: "Welcome to the NGSA Exam API.",
     });
 });

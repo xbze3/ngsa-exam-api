@@ -92,7 +92,7 @@ app.get("/", (req, res) => {
             gradeExam: "POST /ngsa/exam/:testId/grade",
             healthCheck: "GET /healthcheck",
         },
-        message: "Welcome to the NGSA Exam API!",
+        message: "Welcome to the NGSA Exam API.",
     });
 });
 

@@ -145,7 +145,7 @@ router.get("/exams/english", getEnglishExams);
 
 /**
  * @openapi
- * /ngsa/exams/math:
+ * /ngsa/exams/mathematics:
  *   get:
  *     summary: Get all NGSA Mathematics exams
  *     description: Returns all Mathematics exam papers.
@@ -187,7 +187,7 @@ router.get("/exams/english", getEnglishExams);
  *                         format: date-time
  *                         example: 2025-06-28T00:00:00.000Z
  */
-router.get("/exams/math", getMathExams);
+router.get("/exams/mathematics", getMathExams);
 
 /**
  * @openapi

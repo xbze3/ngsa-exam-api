@@ -6,6 +6,7 @@ const {
     getMathExams,
 } = require("../controllers/examController");
 const getExamQuestions = require("../controllers/questionController");
+const { getSubjects } = require("../controllers/subjectController");
 
 const router = express.Router();
 
@@ -13,7 +14,7 @@ const router = express.Router();
  * @openapi
  * /ngsa/exams:
  *   get:
- *     summary: Get all available exams
+ *     summary: Get all available NGSA exams
  *     description: Returns all exams in the database.
  *     tags: [Exams]
  *     responses:
@@ -44,14 +45,6 @@ const router = express.Router();
  *                       year:
  *                         type: integer
  *                         example: 2024
- *                       question_ids:
- *                         type: array
- *                         items:
- *                           type: string
- *                         example:
- *                           - 66d0d0240000000000000001
- *                           - 66d0d0240000000000000002
- *                           - 66d0d0240000000000000003
  *                       created_at:
  *                         type: string
  *                         format: date-time
@@ -65,9 +58,50 @@ router.get("/exams", getExams);
 
 /**
  * @openapi
+ * /ngsa/subjects:
+ *   get:
+ *     summary: Get all subjects with counts
+ *     description: Returns a list of exam subjects and the number of records for each subject.
+ *     tags: [Subjects]
+ *     responses:
+ *       200:
+ *         description: Successfully returned subjects with counts
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 level:
+ *                   type: string
+ *                   example: NGSA
+ *                 subjects:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       subject:
+ *                         type: string
+ *                         example: English
+ *                       count:
+ *                         type: integer
+ *                         example: 12
+ *                   example:
+ *                     - subject: English
+ *                       count: 12
+ *                     - subject: Mathematics
+ *                       count: 10
+ *                     - subject: Science
+ *                       count: 8
+ *                     - subject: Social Studies
+ *                       count: 6
+ */
+router.get("/subjects", getSubjects);
+
+/**
+ * @openapi
  * /ngsa/exams/english:
  *   get:
- *     summary: Get all English exams
+ *     summary: Get all NGSA English exams
  *     description: Returns all English exam papers.
  *     tags: [Exams]
  *     responses:
@@ -98,13 +132,6 @@ router.get("/exams", getExams);
  *                       year:
  *                         type: integer
  *                         example: 2024
- *                       question_ids:
- *                         type: array
- *                         items:
- *                           type: string
- *                         example:
- *                           - 66d0d0240000000000000001
- *                           - 66d0d0240000000000000002
  *                       created_at:
  *                         type: string
  *                         format: date-time
@@ -120,7 +147,7 @@ router.get("/exams/english", getEnglishExams);
  * @openapi
  * /ngsa/exams/math:
  *   get:
- *     summary: Get all Mathematics exams
+ *     summary: Get all NGSA Mathematics exams
  *     description: Returns all Mathematics exam papers.
  *     tags: [Exams]
  *     responses:
@@ -151,13 +178,6 @@ router.get("/exams/english", getEnglishExams);
  *                       year:
  *                         type: integer
  *                         example: 2024
- *                       question_ids:
- *                         type: array
- *                         items:
- *                           type: string
- *                         example:
- *                           - 66d0d0240000000000000001
- *                           - 66d0d0240000000000000002
  *                       created_at:
  *                         type: string
  *                         format: date-time
@@ -173,7 +193,7 @@ router.get("/exams/math", getMathExams);
  * @openapi
  * /ngsa/exam/questions/{testId}:
  *   get:
- *     summary: Get all questions for a specific exam
+ *     summary: Get all questions for a specific NGSA exam
  *     description: Returns all questions for the selected exam. Correct answers are not included.
  *     tags: [Questions]
  *     parameters:

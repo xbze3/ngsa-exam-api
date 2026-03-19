@@ -4,7 +4,9 @@ const QAModel = require("../models/questionModel");
 
 async function getExams(req, res) {
     try {
-        const exams = await ExamModel.find().sort({ subject: 1, year: -1 });
+        const exams = await ExamModel.find()
+            .select("-question_ids")
+            .sort({ subject: 1, year: -1 });
         res.json({
             exams: exams,
         });
@@ -17,9 +19,11 @@ async function getExams(req, res) {
 
 async function getEnglishExams(req, res) {
     try {
-        const exams = await ExamModel.find({ subject: "English" }).sort({
-            year: -1,
-        });
+        const exams = await ExamModel.find({ subject: "English" })
+            .select("-question_ids")
+            .sort({
+                year: -1,
+            });
 
         if (!exams) {
             return res.status(404).json({ message: "No English exams found" });
@@ -37,9 +41,11 @@ async function getEnglishExams(req, res) {
 
 async function getMathExams(req, res) {
     try {
-        const exams = await ExamModel.find({ subject: "Mathematics" }).sort({
-            year: -1,
-        });
+        const exams = await ExamModel.find({ subject: "Mathematics" })
+            .select("-question_ids")
+            .sort({
+                year: -1,
+            });
 
         if (!exams) {
             return res

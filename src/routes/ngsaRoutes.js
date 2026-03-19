@@ -4,6 +4,7 @@ const {
     gradeExam,
     getEnglishExams,
     getMathExams,
+    getExamById,
 } = require("../controllers/examController");
 const getExamQuestions = require("../controllers/questionController");
 const { getSubjects } = require("../controllers/subjectController");
@@ -188,6 +189,62 @@ router.get("/exams/english", getEnglishExams);
  *                         example: 2025-06-28T00:00:00.000Z
  */
 router.get("/exams/mathematics", getMathExams);
+
+/**
+ * @openapi
+ * /ngsa/exam/{testId}:
+ *   get:
+ *     summary: Get details for a specific NGSA exam
+ *     description: Returns the details of a single exam by ID.
+ *     tags: [Exams]
+ *     parameters:
+ *       - in: path
+ *         name: testId
+ *         required: true
+ *         description: The exam ID
+ *         schema:
+ *           type: string
+ *           example: 66d0d0000000000000000024
+ *     responses:
+ *       200:
+ *         description: Successfully returned the exam details
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 exam:
+ *                   type: object
+ *                   properties:
+ *                     _id:
+ *                       type: string
+ *                       example: 66d0d0000000000000000024
+ *                     subject:
+ *                       type: string
+ *                       example: English
+ *                     level:
+ *                       type: string
+ *                       example: NGSA
+ *                     paper_type:
+ *                       type: string
+ *                       example: Paper 1
+ *                     year:
+ *                       type: integer
+ *                       example: 2024
+ *                     created_at:
+ *                       type: string
+ *                       format: date-time
+ *                       example: 2025-06-28T00:00:00.000Z
+ *                     updated_at:
+ *                       type: string
+ *                       format: date-time
+ *                       example: 2025-06-28T00:00:00.000Z
+ *       400:
+ *         description: Invalid exam ID
+ *       404:
+ *         description: Exam not found
+ */
+router.get("/exam/:testId", getExamById);
 
 /**
  * @openapi

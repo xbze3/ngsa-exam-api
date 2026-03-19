@@ -17,6 +17,41 @@ async function getExams(req, res) {
     }
 }
 
+async function getExamById(req, res) {
+    try {
+        const { testId } = req.params;
+
+        if (!mongoose.Types.ObjectId.isValid(testId)) {
+            return res.status(400).json({
+                message: "Invalid exam ID",
+            });
+        }
+
+        const exam = await ExamModel.findById(testId)
+            .select("-question_ids")
+            .lean();
+
+        if (!exam) {
+            return res.status(404).json({
+                message: "Exam not found",
+            });
+        }
+
+        const questionCount = await QAModel.countDocuments({ test_id: testId });
+
+        res.json({
+            exam: {
+                ...exam,
+                question_count: questionCount,
+            },
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: `Something went wrong: ${error.message}`,
+        });
+    }
+}
+
 async function getEnglishExams(req, res) {
     try {
         const exams = await ExamModel.find({ subject: "English" })
@@ -161,4 +196,10 @@ async function gradeExam(req, res) {
     }
 }
 
-module.exports = { getExams, getEnglishExams, getMathExams, gradeExam };
+module.exports = {
+    getExams,
+    getEnglishExams,
+    getMathExams,
+    gradeExam,
+    getExamById,
+};

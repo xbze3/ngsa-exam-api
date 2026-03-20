@@ -23,13 +23,14 @@ const examModel = new Schema(
             required: true,
             min: 1900,
         },
-        question_ids: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: "questions",
-                required: true,
-            },
-        ],
+        is_available: {
+            type: Boolean,
+            required: true,
+        },
+        time_limit: {
+            type: Number,
+            required: true,
+        },
     },
     {
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" },

@@ -5,7 +5,6 @@ const QAModel = require("../models/questionModel");
 async function getExams(req, res) {
     try {
         const exams = await ExamModel.find()
-            .select("-question_ids")
             .sort({ subject: 1, year: -1 });
         res.json({
             exams: exams,
@@ -28,7 +27,6 @@ async function getExamById(req, res) {
         }
 
         const exam = await ExamModel.findById(testId)
-            .select("-question_ids")
             .lean();
 
         if (!exam) {
@@ -55,7 +53,6 @@ async function getExamById(req, res) {
 async function getEnglishExams(req, res) {
     try {
         const exams = await ExamModel.find({ subject: "English" })
-            .select("-question_ids")
             .sort({
                 year: -1,
             });
@@ -77,7 +74,6 @@ async function getEnglishExams(req, res) {
 async function getMathExams(req, res) {
     try {
         const exams = await ExamModel.find({ subject: "Mathematics" })
-            .select("-question_ids")
             .sort({
                 year: -1,
             });

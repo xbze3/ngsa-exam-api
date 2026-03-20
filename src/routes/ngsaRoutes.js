@@ -46,6 +46,13 @@ const router = express.Router();
  *                       year:
  *                         type: integer
  *                         example: 2024
+ *                       is_available:
+ *                         type: boolean
+ *                         example: true
+ *                       time_limit:
+ *                         type: integer
+ *                         description: Time limit for the exam in minutes
+ *                         example: 90
  *                       created_at:
  *                         type: string
  *                         format: date-time
@@ -133,6 +140,13 @@ router.get("/subjects", getSubjects);
  *                       year:
  *                         type: integer
  *                         example: 2024
+ *                       is_available:
+ *                         type: boolean
+ *                         example: true
+ *                       time_limit:
+ *                         type: integer
+ *                         description: Time limit for the exam in minutes
+ *                         example: 90
  *                       created_at:
  *                         type: string
  *                         format: date-time
@@ -179,6 +193,13 @@ router.get("/exams/english", getEnglishExams);
  *                       year:
  *                         type: integer
  *                         example: 2024
+ *                       is_available:
+ *                         type: boolean
+ *                         example: true
+ *                       time_limit:
+ *                         type: integer
+ *                         description: Time limit for the exam in minutes
+ *                         example: 90
  *                       created_at:
  *                         type: string
  *                         format: date-time
@@ -231,6 +252,13 @@ router.get("/exams/mathematics", getMathExams);
  *                     year:
  *                       type: integer
  *                       example: 2024
+ *                     is_available:
+ *                       type: boolean
+ *                       example: true
+ *                     time_limit:
+ *                       type: integer
+ *                       description: Time limit for the exam in minutes
+ *                       example: 90
  *                     created_at:
  *                       type: string
  *                       format: date-time

@@ -4,7 +4,7 @@ async function getExamQuestions(req, res) {
     try {
         const { testId } = req.params;
 
-        const examQuestions = await QAModel.find({ test_id: id }).select(
+        const examQuestions = await QAModel.find({ test_id: testId }).select(
             "-correct_option -test_id",
         );
 

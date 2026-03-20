@@ -4,9 +4,9 @@ async function getExamQuestions(req, res) {
     try {
         const { testId } = req.params;
 
-        const examQuestions = await QAModel.find({ test_id: testId }).select(
-            "-correct_option -test_id",
-        );
+        const examQuestions = await QAModel.find({ test_id: testId })
+            .select("-correct_option -test_id")
+            .sort({ number: 1 });
 
         if (!examQuestions) {
             return res.status(404).json({ message: "Exam not found" });

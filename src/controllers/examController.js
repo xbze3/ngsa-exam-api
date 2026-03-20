@@ -149,18 +149,32 @@ async function gradeExam(req, res) {
         for (const question of questions) {
             const submitted =
                 submittedAnswersMap.get(String(question._id)) || null;
+
             const isCorrect = submitted === question.correct_option;
 
             if (isCorrect) {
                 score += 1;
             }
 
+            const selectedOptionText =
+                submitted && question.options?.[submitted]
+                    ? question.options[submitted]
+                    : null;
+
+            const correctOptionText =
+                question.correct_option &&
+                question.options?.[question.correct_option]
+                    ? question.options[question.correct_option]
+                    : null;
+
             results.push({
                 questionId: question._id,
                 number: question.number,
                 question_text: question.question_text,
                 selectedOption: submitted,
+                selectedOptionText,
                 correctOption: question.correct_option,
+                correctOptionText,
                 isCorrect,
             });
         }

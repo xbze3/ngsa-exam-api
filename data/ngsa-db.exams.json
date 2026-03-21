@@ -13,7 +13,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -30,7 +31,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -47,7 +49,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -64,7 +67,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -81,7 +85,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -98,7 +103,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -115,7 +121,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -132,7 +139,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -149,7 +157,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -166,7 +175,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": true,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -183,7 +193,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -200,7 +211,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -217,7 +229,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -234,7 +247,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -251,7 +265,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -268,7 +283,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -285,7 +301,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -302,7 +319,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -319,7 +337,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -336,7 +355,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -353,7 +373,8 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 },
 {
   "_id": {
@@ -370,5 +391,6 @@
     "$date": "2025-06-28T00:00:00.000Z"
   },
   "is_available": false,
-  "time_limit": 90
+  "time_limit": 90,
+  "question_count": 40
 }]

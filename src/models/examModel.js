@@ -31,6 +31,10 @@ const examModel = new Schema(
             type: Number,
             required: true,
         },
+        question_count: {
+            type: Number,
+            required: true,
+        },
     },
     {
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" },

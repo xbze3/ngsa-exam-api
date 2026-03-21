@@ -53,6 +53,10 @@ const router = express.Router();
  *                         type: integer
  *                         description: Time limit for the exam in minutes
  *                         example: 90
+ *                       question_count:
+ *                         type: integer
+ *                         description: Total number of questions in the exam
+ *                         example: 40
  *                       created_at:
  *                         type: string
  *                         format: date-time
@@ -155,6 +159,10 @@ router.get("/subjects", getSubjects);
  *                         type: integer
  *                         description: Time limit for the exam in minutes
  *                         example: 90
+ *                       question_count:
+ *                         type: integer
+ *                         description: Total number of questions in the exam
+ *                         example: 40
  *                       created_at:
  *                         type: string
  *                         format: date-time
@@ -208,6 +216,10 @@ router.get("/exams/english", getEnglishExams);
  *                         type: integer
  *                         description: Time limit for the exam in minutes
  *                         example: 90
+ *                       question_count:
+ *                         type: integer
+ *                         description: Total number of questions in the exam
+ *                         example: 40
  *                       created_at:
  *                         type: string
  *                         format: date-time
@@ -267,6 +279,10 @@ router.get("/exams/mathematics", getMathExams);
  *                       type: integer
  *                       description: Time limit for the exam in minutes
  *                       example: 90
+ *                     question_count:
+ *                       type: integer
+ *                       description: Total number of questions in the exam
+ *                       example: 40
  *                     created_at:
  *                       type: string
  *                       format: date-time

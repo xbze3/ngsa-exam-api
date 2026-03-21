@@ -69,11 +69,11 @@ router.get("/exams", getExams);
  * /ngsa/subjects:
  *   get:
  *     summary: Get all subjects with counts
- *     description: Returns a list of exam subjects and the number of records for each subject.
+ *     description: Returns a list of exam subjects, the number of records for each subject, and availability status.
  *     tags: [Subjects]
  *     responses:
  *       200:
- *         description: Successfully returned subjects with counts
+ *         description: Successfully returned subjects with counts and availability
  *         content:
  *           application/json:
  *             schema:
@@ -93,15 +93,23 @@ router.get("/exams", getExams);
  *                       count:
  *                         type: integer
  *                         example: 12
+ *                       is_available:
+ *                         type: boolean
+ *                         description: Indicates if at least one exam for the subject is available
+ *                         example: true
  *                   example:
  *                     - subject: English
  *                       count: 12
+ *                       is_available: true
  *                     - subject: Mathematics
  *                       count: 10
+ *                       is_available: false
  *                     - subject: Science
  *                       count: 8
+ *                       is_available: true
  *                     - subject: Social Studies
  *                       count: 6
+ *                       is_available: false
  */
 router.get("/subjects", getSubjects);
 

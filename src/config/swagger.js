@@ -11,12 +11,12 @@ const options = {
         },
         servers: [
             {
-                url: "https://ngsa-exam-api.onrender.com",
-                description: "Production Server",
-            },
-            {
                 url: "http://localhost:8080",
                 description: "Your Local Server",
+            },
+            {
+                url: "https://ngsa-exam-api.onrender.com",
+                description: "Production Server",
             },
         ],
         tags: [

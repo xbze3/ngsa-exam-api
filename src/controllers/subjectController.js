@@ -7,6 +7,7 @@ async function getSubjects(req, res) {
                 $group: {
                     _id: "$subject",
                     count: { $sum: 1 },
+                    is_available: { $max: "$is_available" },
                 },
             },
             {
@@ -14,6 +15,7 @@ async function getSubjects(req, res) {
                     _id: 0,
                     subject: "$_id",
                     count: 1,
+                    is_available: 1,
                 },
             },
             {

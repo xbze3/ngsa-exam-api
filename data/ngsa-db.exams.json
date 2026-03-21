@@ -182,7 +182,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -199,7 +199,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -216,7 +216,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -233,7 +233,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -250,7 +250,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -267,7 +267,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -284,7 +284,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -301,7 +301,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -318,7 +318,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -335,7 +335,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -352,7 +352,7 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 },
 {
@@ -369,6 +369,6 @@
   "updated_at": {
     "$date": "2025-06-28T00:00:00.000Z"
   },
-  "is_available": true,
+  "is_available": false,
   "time_limit": 90
 }]

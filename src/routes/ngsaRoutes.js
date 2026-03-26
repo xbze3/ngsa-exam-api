@@ -4,6 +4,8 @@ const {
     gradeExam,
     getEnglishExams,
     getMathExams,
+    getScienceExams,
+    getSocialStudiesExams,
     getExamById,
 } = require("../controllers/examController");
 const getExamQuestions = require("../controllers/questionController");
@@ -230,6 +232,120 @@ router.get("/exams/english", getEnglishExams);
  *                         example: 2025-06-28T00:00:00.000Z
  */
 router.get("/exams/mathematics", getMathExams);
+
+/**
+ * @openapi
+ * /ngsa/exams/science:
+ *   get:
+ *     summary: Get all NGSA Science exams
+ *     description: Returns all Science exam papers.
+ *     tags: [Exams]
+ *     responses:
+ *       200:
+ *         description: Successfully returned all Science exams
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 exams:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       _id:
+ *                         type: string
+ *                         example: 66d0d0000000000000000024
+ *                       subject:
+ *                         type: string
+ *                         example: Science
+ *                       level:
+ *                         type: string
+ *                         example: NGSA
+ *                       paper_type:
+ *                         type: string
+ *                         example: Paper 1
+ *                       year:
+ *                         type: integer
+ *                         example: 2024
+ *                       is_available:
+ *                         type: boolean
+ *                         example: true
+ *                       time_limit:
+ *                         type: integer
+ *                         description: Time limit for the exam in minutes
+ *                         example: 90
+ *                       question_count:
+ *                         type: integer
+ *                         description: Total number of questions in the exam
+ *                         example: 40
+ *                       created_at:
+ *                         type: string
+ *                         format: date-time
+ *                         example: 2025-06-28T00:00:00.000Z
+ *                       updated_at:
+ *                         type: string
+ *                         format: date-time
+ *                         example: 2025-06-28T00:00:00.000Z
+ */
+router.get("/exams/science", getScienceExams);
+
+/**
+ * @openapi
+ * /ngsa/exams/social-studies:
+ *   get:
+ *     summary: Get all NGSA Social Studies exams
+ *     description: Returns all Social Studies exam papers.
+ *     tags: [Exams]
+ *     responses:
+ *       200:
+ *         description: Successfully returned all Social Studies exams
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 exams:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       _id:
+ *                         type: string
+ *                         example: 66d0d0000000000000000024
+ *                       subject:
+ *                         type: string
+ *                         example: Social Studies
+ *                       level:
+ *                         type: string
+ *                         example: NGSA
+ *                       paper_type:
+ *                         type: string
+ *                         example: Paper 1
+ *                       year:
+ *                         type: integer
+ *                         example: 2024
+ *                       is_available:
+ *                         type: boolean
+ *                         example: true
+ *                       time_limit:
+ *                         type: integer
+ *                         description: Time limit for the exam in minutes
+ *                         example: 90
+ *                       question_count:
+ *                         type: integer
+ *                         description: Total number of questions in the exam
+ *                         example: 40
+ *                       created_at:
+ *                         type: string
+ *                         format: date-time
+ *                         example: 2025-06-28T00:00:00.000Z
+ *                       updated_at:
+ *                         type: string
+ *                         format: date-time
+ *                         example: 2025-06-28T00:00:00.000Z
+ */
+router.get("/exams/social-studies", getSocialStudiesExams);
 
 /**
  * @openapi

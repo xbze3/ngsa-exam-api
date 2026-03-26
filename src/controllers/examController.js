@@ -4,8 +4,7 @@ const QAModel = require("../models/questionModel");
 
 async function getExams(req, res) {
     try {
-        const exams = await ExamModel.find()
-            .sort({ subject: 1, year: -1 });
+        const exams = await ExamModel.find().sort({ subject: 1, year: -1 });
         res.json({
             exams: exams,
         });
@@ -26,8 +25,7 @@ async function getExamById(req, res) {
             });
         }
 
-        const exam = await ExamModel.findById(testId)
-            .lean();
+        const exam = await ExamModel.findById(testId).lean();
 
         if (!exam) {
             return res.status(404).json({
@@ -52,10 +50,9 @@ async function getExamById(req, res) {
 
 async function getEnglishExams(req, res) {
     try {
-        const exams = await ExamModel.find({ subject: "English" })
-            .sort({
-                year: -1,
-            });
+        const exams = await ExamModel.find({ subject: "English" }).sort({
+            year: -1,
+        });
 
         if (!exams) {
             return res.status(404).json({ message: "No English exams found" });
@@ -73,15 +70,56 @@ async function getEnglishExams(req, res) {
 
 async function getMathExams(req, res) {
     try {
-        const exams = await ExamModel.find({ subject: "Mathematics" })
-            .sort({
-                year: -1,
-            });
+        const exams = await ExamModel.find({ subject: "Mathematics" }).sort({
+            year: -1,
+        });
 
         if (!exams) {
             return res
                 .status(404)
                 .json({ message: "No Mathemtaics exams found" });
+        }
+
+        res.json({
+            exams: exams,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: `Something went wrong: ${error.message}`,
+        });
+    }
+}
+
+async function getScienceExams(req, res) {
+    try {
+        const exams = await ExamModel.find({ subject: "Science" }).sort({
+            year: -1,
+        });
+
+        if (!exams) {
+            return res.status(404).json({ message: "No Science exams found" });
+        }
+
+        res.json({
+            exams: exams,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: `Something went wrong: ${error.message}`,
+        });
+    }
+}
+
+async function getSocialStudiesExams(req, res) {
+    try {
+        const exams = await ExamModel.find({ subject: "Social Studies" }).sort({
+            year: -1,
+        });
+
+        if (!exams) {
+            return res
+                .status(404)
+                .json({ message: "No Social Studies exams found" });
         }
 
         res.json({
@@ -212,4 +250,6 @@ module.exports = {
     getMathExams,
     gradeExam,
     getExamById,
+    getScienceExams,
+    getSocialStudiesExams,
 };

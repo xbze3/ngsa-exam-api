@@ -75,11 +75,11 @@ router.get("/exams", getExams);
  * /ngsa/subjects:
  *   get:
  *     summary: Get all subjects with counts
- *     description: Returns a list of exam subjects, the number of records for each subject, and availability status.
+ *     description: Returns a list of subjects with metadata from the subjects collection, along with the number of exams for each subject.
  *     tags: [Subjects]
  *     responses:
  *       200:
- *         description: Successfully returned subjects with counts and availability
+ *         description: Successfully returned subjects with counts and metadata
  *         content:
  *           application/json:
  *             schema:
@@ -99,22 +99,44 @@ router.get("/exams", getExams);
  *                       count:
  *                         type: integer
  *                         example: 12
+ *                       description:
+ *                         type: string
+ *                         example: Grammar, vocabulary, comprehension and spelling.
+ *                       icon:
+ *                         type: string
+ *                         description: Lucide icon name used for rendering in the UI
+ *                         example: BookOpen
+ *                       color:
+ *                         type: string
+ *                         example: blue
  *                       is_available:
  *                         type: boolean
- *                         description: Indicates if at least one exam for the subject is available
+ *                         description: Indicates if the subject is available for use/display
  *                         example: true
  *                   example:
  *                     - subject: English
  *                       count: 12
+ *                       description: Grammar, vocabulary, comprehension and spelling.
+ *                       icon: BookOpen
+ *                       color: blue
  *                       is_available: true
  *                     - subject: Mathematics
  *                       count: 10
- *                       is_available: false
+ *                       description: Number operations, fractions, and problem solving.
+ *                       icon: Calculator
+ *                       color: green
+ *                       is_available: true
  *                     - subject: Science
  *                       count: 8
+ *                       description: Living things, energy, and the environment.
+ *                       icon: FlaskConical
+ *                       color: purple
  *                       is_available: true
  *                     - subject: Social Studies
  *                       count: 6
+ *                       description: History, geography, and society.
+ *                       icon: Globe
+ *                       color: orange
  *                       is_available: false
  */
 router.get("/subjects", getSubjects);

@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "69c57c5d42e0c1e89579cb7d"
+  },
+  "name": "NGSA English",
+  "level": "NGSA",
+  "subject": "English",
+  "description": "Grammar, vocabulary, comprehension and spelling.",
+  "icon": "BookOpen",
+  "color": "blue",
+  "category": "Language",
+  "is_active": true,
+  "is_available": true,
+  "created_at": {
+    "$date": "2026-03-26T18:35:09.403Z"
+  },
+  "updated_at": {
+    "$date": "2026-03-26T18:35:09.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69c57c5d42e0c1e89579cb7e"
+  },
+  "name": "NGSA Mathematics",
+  "level": "NGSA",
+  "subject": "Mathematics",
+  "description": "Number operations, fractions, word problems, geometry, and measurement.",
+  "icon": "Calculator",
+  "color": "green",
+  "category": "STEM",
+  "is_active": true,
+  "is_available": true,
+  "created_at": {
+    "$date": "2026-03-26T18:35:09.403Z"
+  },
+  "updated_at": {
+    "$date": "2026-03-26T18:35:09.403Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69c57c5d42e0c1e89579cb7f"
+  },
+  "name": "NGSA Science",
+  "level": "NGSA",
+  "subject": "Science",
+  "description": "Living things, matter, energy, systems, and everyday science concepts.",
+  "icon": "FlaskConical",
+  "color": "purple",
+  "category": "STEM",
+  "is_active": true,
+  "is_available": true,
+  "created_at": {
+    "$date": "2026-03-26T18:35:09.403Z"
+  },
+  "updated_at": {
+    "$date": "2026-03-26T18:35:09.403Z"
+  }
+}]

@@ -1,21 +1,40 @@
+const mongoose = require("mongoose");
 const ExamModel = require("../models/examModel");
 
 async function getSubjects(req, res) {
     try {
         const subjects = await ExamModel.aggregate([
             {
-                $group: {
-                    _id: "$subject",
-                    count: { $sum: 1 },
-                    is_available: { $max: "$is_available" },
+                $match: {
+                    subject_id: { $ne: null },
                 },
+            },
+            {
+                $group: {
+                    _id: "$subject_id",
+                    count: { $sum: 1 },
+                },
+            },
+            {
+                $lookup: {
+                    from: "subjects",
+                    localField: "_id",
+                    foreignField: "_id",
+                    as: "subject_doc",
+                },
+            },
+            {
+                $unwind: "$subject_doc",
             },
             {
                 $project: {
                     _id: 0,
-                    subject: "$_id",
+                    subject: "$subject_doc.subject",
                     count: 1,
-                    is_available: 1,
+                    description: "$subject_doc.description",
+                    icon: "$subject_doc.icon",
+                    color: "$subject_doc.color",
+                    is_available: "$subject_doc.is_available",
                 },
             },
             {

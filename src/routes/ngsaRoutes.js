@@ -114,25 +114,33 @@ router.get("/exams", getExams);
  *                         description: Indicates if the subject is available for use/display
  *                         example: true
  *                   example:
- *                     - subject: English
+ *                     - name: NGSA English
+ *                       level: NGSA
+ *                       subject: English
  *                       count: 12
  *                       description: Grammar, vocabulary, comprehension and spelling.
  *                       icon: BookOpen
  *                       color: blue
  *                       is_available: true
- *                     - subject: Mathematics
+ *                     - name: NGSA Mathematics
+ *                       level: NGSA
+ *                       subject: Mathematics
  *                       count: 10
  *                       description: Number operations, fractions, and problem solving.
  *                       icon: Calculator
  *                       color: green
  *                       is_available: true
- *                     - subject: Science
+ *                     - name: NGSA Science
+ *                       level: NGSA
+ *                       subject: Science
  *                       count: 8
  *                       description: Living things, energy, and the environment.
  *                       icon: FlaskConical
  *                       color: purple
  *                       is_available: true
- *                     - subject: Social Studies
+ *                     - name: NGSA Social Studies
+ *                       level: NGSA
+ *                       subject: Social Studies
  *                       count: 6
  *                       description: History, geography, and society.
  *                       icon: Globe

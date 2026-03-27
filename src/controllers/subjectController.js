@@ -29,6 +29,8 @@ async function getSubjects(req, res) {
             {
                 $project: {
                     _id: 0,
+                    name: "$subject_doc.name",
+                    level: "$subject_doc.level",
                     subject: "$subject_doc.subject",
                     count: 1,
                     description: "$subject_doc.description",

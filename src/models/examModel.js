@@ -3,6 +3,11 @@ const { Schema } = mongoose;
 
 const examModel = new Schema(
     {
+        subject_id: {
+            type: Schema.Types.ObjectId,
+            ref: "Subject",
+            required: true,
+        },
         subject: {
             type: String,
             required: true,
@@ -39,10 +44,7 @@ const examModel = new Schema(
     {
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
         versionKey: false,
-    },
-    {
         strict: false,
-        versionKey: false,
     },
 );
 

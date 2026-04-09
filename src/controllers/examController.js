@@ -223,6 +223,7 @@ async function gradeExam(req, res) {
         res.json({
             test: {
                 id: test._id,
+                subject_id: test.subject_id,
                 subject: test.subject,
                 level: test.level,
                 paper_type: test.paper_type,
@@ -230,6 +231,7 @@ async function gradeExam(req, res) {
             },
             summary: {
                 score,
+                correct: score,
                 totalQuestions,
                 incorrect,
                 unanswered,
